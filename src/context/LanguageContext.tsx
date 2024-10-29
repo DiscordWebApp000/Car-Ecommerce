@@ -1,9 +1,11 @@
-// context/LanguageContext.js
-
 "use client";
 import React, { createContext, useContext, useState } from 'react';
 
-const LanguageContext = createContext();
+// Varsayılan değer olarak bir nesne sağlayalım
+const LanguageContext = createContext({
+    language: 'en', // Varsayılan dil
+    changeLanguage: () => {}, // Varsayılan değişim fonksiyonu
+});
 
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState('en'); // Varsayılan dil
@@ -19,4 +21,5 @@ export const LanguageProvider = ({ children }) => {
     );
 };
 
+// Context'i kullanmak için bir hook
 export const useLanguage = () => useContext(LanguageContext);
