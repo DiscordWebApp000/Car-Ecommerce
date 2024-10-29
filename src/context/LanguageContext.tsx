@@ -1,16 +1,27 @@
-"use client";
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// Varsayılan değer olarak bir nesne sağlayalım
-const LanguageContext = createContext({
-    language: 'en', // Varsayılan dil
-    changeLanguage: () => {}, // Varsayılan değişim fonksiyonu
-});
+// Context için tipleri tanımlayalım
+interface LanguageContextType {
+    language: string;
+    changeLanguage: (lang: string) => void; // Dili değiştirmek için bir fonksiyon
+}
 
-export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en'); // Varsayılan dil
+// Varsayılan değerleri belirleyelim
+const defaultContextValue: LanguageContextType = {
+    language: 'en',
+    changeLanguage: () => {}, // Boş bir fonksiyon
+};
 
-    const changeLanguage = (lang) => {
+const LanguageContext = createContext<LanguageContextType>(defaultContextValue);
+
+interface LanguageProviderProps {
+    children: ReactNode;
+}
+
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+    const [language, setLanguage] = useState<string>('en'); // Varsayılan dil
+
+    const changeLanguage = (lang: string) => {
         setLanguage(lang);
     };
 
