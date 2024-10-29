@@ -1,0 +1,27 @@
+{
+    "en": {
+        "navbar": {
+            "links": [
+                { "key": "aksesuarlar", "text": "Accessories" },
+                { "key": "araba", "text": "Cars" },
+                { "key": "mutfak", "text": "Kitchen" },
+                { "key": "salon", "text": "Living Room" },
+                { "key": "bahce", "text": "Garden" },
+                { "key": "Okul", "text": "School" }
+
+            ]
+        }
+    },
+    "tr": {
+        "navbar": {
+            "links": [
+                { "key": "aksesuarlar", "text": "Aksesuarlar" },
+                { "key": "araba", "text": "Araba" },
+                { "key": "mutfak", "text": "Mutfak" },
+                { "key": "salon", "text": "Salon" },
+                { "key": "bahce", "text": "Bahçe" },
+                { "key": "Okul", "text": "Okul" }
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "en": {
+        "navbar": {
+            "links": [
+                { "key": "siparislerim", "text": "My Orders" },
+                { "key": "kampanyalar", "text": "Campaigns" },
+                { "key": "hakkimda", "text": "About Us" },
+                { "key": "cozum-merkezi", "text": "Help Center" }
+            ]
+        }
+    },
+    "tr": {
+        "navbar": {
+            "links": [
+                { "key": "siparislerim", "text": "Siparişlerim" },
+                { "key": "kampanyalar", "text": "Kampanyalar" },
+                { "key": "hakkimda", "text": "Hakkımda" },
+                { "key": "cozum-merkezi", "text": "Çözüm Merkezi" }
+            ]
+        }
+    }
+}

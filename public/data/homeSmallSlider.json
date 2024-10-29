@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "Casio Classic",
+      "price": "₺450",
+      "image": "/images/dataImages/Saat1.png",
+      "stars": 4,
+      "timeRemaining": 146400
+    },
+    {
+      "id": 2,
+      "name": "Seiko Premium",
+      "price": "₺1,200",
+      "image": "/images/dataImages/Saat2.png",
+      "stars": 5,
+      "timeRemaining": 54000
+    },
+    {
+      "id": 3,
+      "name": "G-Shock Sport",
+      "price": "₺850",
+      "image": "/images/dataImages/Saat3.png",
+      "stars": 4,
+      "timeRemaining": 72000
+    },
+    {
+      "id": 4,
+      "name": "Rolex Submariner",
+      "price": "₺25,000",
+      "image": "/images/dataImages/Saat5.png",
+      "stars": 5,
+      "timeRemaining": 36000
+    },
+    {
+      "id": 5,
+      "name": "Omega Seamaster",
+      "price": "₺20,000",
+      "image": "/images/dataImages/Saat4.png",
+      "stars": 5,
+      "timeRemaining": 18000
+    }
+  ]
+  

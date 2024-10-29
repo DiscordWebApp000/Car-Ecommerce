@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "image": "/images/dataImages/slider1.png",
+      "link": "/big-product-1"
+    },
+    {
+      "id": 2,
+      "image": "/images/dataImages/slider2.png",
+      "link": "/big-product-2"
+    },
+    {
+      "id": 3,
+      "image": "/images/dataImages/slider1.png",
+      "link": "/big-product-3"
+    }
+  ]
+  
