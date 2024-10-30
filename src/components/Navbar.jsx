@@ -1,5 +1,4 @@
-// components/Navbar.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa';
@@ -8,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import data1 from '../../public/data/navbarLinks.json';
 import data2 from '../../public/data/navbarLinks2.json';
+import languagesData from '../../public/data/languages.json'; // languages.json dosyasını içe aktarın
 import '../app/globals.css';
 
 const Navbar = () => {
@@ -21,6 +21,13 @@ const Navbar = () => {
     const navbarLinks1 = data1[language]?.navbar.links || [];
     const navbarLinks2 = data2[language]?.navbar.links || [];
 
+    // State for translations
+    const [translations, setTranslations] = useState({});
+
+    // Load language-specific content
+    useEffect(() => {
+        setTranslations(languagesData[language] || {}); 
+    }, [language]);
 
     // State for the custom dropdown
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -29,15 +36,6 @@ const Navbar = () => {
         changeLanguage(lang);
         setDropdownOpen(false); // Close dropdown after selection
     };
-
-    // Translated texts
-    const loginText = language === 'en' ? 'Login' : 'Giriş Yap';
-    const cartText = language === 'en' ? 'My Cart' : 'Sepetim';
-    const placeholderText = language === 'en' ? 'Car Valve Cap' : 'Araba Sibop Kapagi';
-    const AllCateqories = language === 'en' ? 'All Cateqories' : 'Tüm Kategoriler';
-    const opportunityProducts = language === 'en' ? 'Opportunity Products' : 'Fırsat Urunleri';
-
-
 
     return (
         <nav className={`flex flex-col items-center justify-between p-4 ${bgColor1} max-w-[1440px] mx-auto`}>
@@ -114,7 +112,7 @@ const Navbar = () => {
                 <div className={`w-1/3 flex items-center bg-transparent rounded-[20px] border border-2 border-blue-500 overflow-hidden ${textColor}`}>
                     <input
                         type="text"
-                        placeholder={placeholderText} // Placeholder with language support
+                        placeholder={translations.placeholderText || ""} // Placeholder with language support
                         className="flex-grow p-2 rounded-l-lg bg-transparent focus:outline-none"
                     />
                     <button className="w-14 h-10 bg-blue-600 flex items-center justify-center rounded-r-lg">
@@ -126,11 +124,11 @@ const Navbar = () => {
                 <div className="flex space-x-4 p-4">
                     <button className={`flex items-center bg-transparent ${textColor} rounded-lg p-2 ${theme === 'dark' ? ' hover:bg-[#3B3961]' : ' hover:bg-gray-200'}`}>
                         <FaUser className="mr-2" />
-                        {loginText} {/* Login button text with language support */}
+                        {translations.loginText} {/* Login button text with language support */}
                     </button>
                     <button className="flex items-center bg-blue-600 text-white rounded-lg p-2 hover:bg-blue-700">
                         <FaShoppingCart className="mr-2" />
-                        {cartText} {/* Cart button text with language support */}
+                        {translations.cartText} {/* Cart button text with language support */}
                     </button>
                 </div>
             </div>
@@ -140,7 +138,7 @@ const Navbar = () => {
                     <div className='h-full mx-4 flex justify-center items-center'>
                         <button className='flex flex-row space-x-2 items-center bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600'>
                             <IoMenu className='text-3xl text-white' />
-                            <p className='text-white'>{AllCateqories}</p>
+                            <p className='text-white'>{translations.allCategories}</p>
                         </button>
                     </div>
 
@@ -158,13 +156,13 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* User and Cart Buttons */}
+                    {/* Opportunity Products */}
                     <div className="flex space-x-4 p-4">
                         <Link 
                             href="#firsat-urunleri" 
                             className='text-[#EAA560] hover:text-[#FFB76B]'
                         >
-                            {opportunityProducts}
+                            {translations.opportunityProducts}
                         </Link>
                     </div>
                 </div>

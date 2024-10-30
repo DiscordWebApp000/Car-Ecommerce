@@ -1,0 +1,57 @@
+{
+  "smallCategories": [
+    { 
+      "id": 1, 
+      "name": { "en": "Category 1", "tr": "Kategori 1" }, 
+      "image": "/images/dataImages/populerCategories/Car.png", 
+      "link": "/category1" 
+    },
+    { 
+      "id": 2, 
+      "name": { "en": "Category 2", "tr": "Kategori 2" }, 
+      "image": "/images/dataImages/populerCategories/Dress.png", 
+      "link": "/category2" 
+    },
+    { 
+      "id": 3, 
+      "name": { "en": "Category 3", "tr": "Kategori 3" }, 
+      "image": "/images/dataImages/populerCategories/Girl.png", 
+      "link": "/category3" 
+    },
+    { 
+      "id": 4, 
+      "name": { "en": "Category 4", "tr": "Kategori 4" }, 
+      "image": "/images/dataImages/populerCategories/Tablet.png", 
+      "link": "/category4" 
+    },
+    { 
+      "id": 5, 
+      "name": { "en": "Category 5", "tr": "Kategori 5" }, 
+      "image": "/images/dataImages/populerCategories/Home.png", 
+      "link": "/category5" 
+    }
+  ],
+  "largeCategories": [
+    { 
+      "id": 6, 
+      "name": { "en": "CAR", "tr": "ARABA" }, 
+      "image": "/images/dataImages/populerCategories/bigSlide1.png", 
+      "link": "/category6", 
+      "description": { "en": "20% DISCOUNT ON ACCESSORIES", "tr": "AKSESUARLARINDA 20% INDIRIM" } 
+    },
+    { 
+      "id": 7, 
+      "name": { "en": "KITCHEN", "tr": "MUTFAK" }, 
+      "image": "/images/dataImages/populerCategories/bigSlide2.png", 
+      "link": "/category7", 
+      "description": { "en": "30% DISCOUNT ON ACCESSORIES", "tr": "AKSESUARLARINDA 30% INDIRIM" } 
+    },
+    { 
+      "id": 8, 
+      "name": { "en": "OFFICE", "tr": "OFIS" }, 
+      "image": "/images/dataImages/populerCategories/bigSlide3.png", 
+      "link": "/category8", 
+      "description": { "en": "50% DISCOUNT ON ACCESSORIES", "tr": "AKSESUARLARINDA 50% INDIRIM" } 
+    }  
+  ]
+}

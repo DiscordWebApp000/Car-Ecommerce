@@ -1,8 +1,7 @@
 "use client"; // İstemci bileşeni olduğunu belirt
 
 import { useTheme } from '../context/ThemeContext';
-import Navbar from '../components/Navbar';
-import HomeSlider from '../components/HomeSlider';
+import { Navbar , HomeSlider , PopularCategories} from '../components';
 import './globals.css';
 
 export default function Home() {
@@ -14,6 +13,7 @@ export default function Home() {
     <div className={`min-h-screen w-full ${bgColor1}`}>
       <Navbar />
       <HomeSlider />
+      <PopularCategories />
     </div>
   );
 }

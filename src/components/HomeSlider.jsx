@@ -2,19 +2,30 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import { useLanguage } from '../context/LanguageContext';
 
 import SmallSliderData from '../../public/data/homeSmallSlider.json';
 import BigSliderData from '../../public/data/homeBigSlider.json';
+import languagesData from '../../public/data/languages.json';
 
 const products = SmallSliderData;
 
 const HomeSlider = () => {
+  const { language } = useLanguage();
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(products[currentProductIndex].timeRemaining);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const currentProduct = products[currentProductIndex];
   const slides = BigSliderData;
+
+  // State for translations
+  const [translations, setTranslations] = useState({});
+
+  // Load language-specific content
+  useEffect(() => {
+      setTranslations(languagesData[language] || {}); 
+  }, [language]);
 
   // Küçük Slider için ürün değişimi
   const changeProduct = (direction) => {
@@ -36,6 +47,7 @@ const HomeSlider = () => {
 
   useEffect(() => {
     setTimeLeft(currentProduct.timeRemaining);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentProductIndex]);
 
   useEffect(() => {
@@ -56,9 +68,9 @@ const HomeSlider = () => {
   const { days, hours, minutes, secs } = formatTime(timeLeft);
 
   return (
-    <div className='flex flex-col md:flex-row max-w-[1440px] mx-auto p-2'>
+    <div className='flex flex-col md:flex-row max-w-[1440px] mx-auto p-2 pt-10'>
       {/* Büyük Slider */}
-      <div className='relative w-full h-[450px] bg-black  md:p-0'>
+      <div className='relative w-full h-[450px] bg-black  md:p-0 '>
         <div className='flex justify-between items-center absolute top-0 left-0 right-0 h-full p-4 '>
             <button 
             onClick={() => changeSlide('prev')} 
@@ -100,10 +112,10 @@ const HomeSlider = () => {
 
 
       {/* Küçük Slider */}
-      <div className='flex flex-row w-full pt-2 md:pt-0 sm:w-[400px] mx-auto h-[450px] gap-4 mb-10 sm:ml-4'>
-        <div className='flex flex-col w-full bg-black h-full border border-1 border-gray-300'>
+      <div className='flex flex-row w-full pt-2 md:pt-0 sm:w-[400px] mx-auto h-[450px] gap-4 mb-10 sm:ml-4  '>
+        <div className='flex flex-col w-full bg-black h-full border border-1 border-gray-300 '>
           <div className='w-full bg-gray-200 flex justify-between items-center p-4' style={{ height: '10%' }}>
-            <p className='text-black font-bold'>Yeni Fırsatlar</p>
+            <p className='text-black font-bold'>{translations.newopportunitys || ""}</p>
             <div className='flex space-x-2'>
               <button onClick={() => changeProduct('prev')} className='w-7 h-7 rounded-full bg-white flex justify-center items-center'>
                 <IoChevronBack className='text-gray-500 text-lg' />
@@ -136,19 +148,19 @@ const HomeSlider = () => {
           <div className='w-full flex justify-around items-center bg-gray-300 p-2 text-black text-sm' style={{ height: '10%' }}>
             <div className='flex flex-col items-center'>
               <p>{days}</p>
-              <p>Gün</p>
+              <p>{translations.day || ""}</p>
             </div>
             <div className='flex flex-col items-center'>
               <p>{hours}</p>
-              <p>Saat</p>
+              <p>{translations.hour || ""}</p>
             </div>
             <div className='flex flex-col items-center'>
               <p>{minutes}</p>
-              <p>Dakika</p>
+              <p>{translations.minute || ""}</p>
             </div>
             <div className='flex flex-col items-center'>
               <p>{secs}</p>
-              <p>Saniye</p>
+              <p>{translations.second || ""}</p>
             </div>
           </div>
         </div>

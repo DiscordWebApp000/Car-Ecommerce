@@ -1,0 +1,29 @@
+{
+    "en": {
+      "loginText": "Login",
+      "cartText": "My Cart",
+      "placeholderText": "Car Valve Cap",
+      "allCategories": "All Categories",
+      "opportunityProducts": "Opportunity Products",
+      "newopportunitys": "New Opportunity ",
+      "day" : "Day",
+      "hour" : "Hour",
+      "minute" : "Minute",
+      "second" : "Second",
+      "popularCategories": "Popular Categories"
+    },
+    "tr": {
+      "loginText": "Giriş Yap",
+      "cartText": "Sepetim",
+      "placeholderText": "Araba Sibop Kapağı",
+      "allCategories": "Tüm Kategoriler",
+      "opportunityProducts": "Fırsat Ürünleri",
+      "newopportunitys": "Yeni Fırsatlar ",
+      "day" : "Gün",
+      "hour" : "Saat",
+      "minute" : "Dakika",
+      "second" : "Saniye",
+      "popularCategories": "Popüler Kategoriler"
+    }
+  }
+  
